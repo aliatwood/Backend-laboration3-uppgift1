@@ -16,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/aliatwood/Backend-laboration3-uppgift1/issues"
   },
-  "homepage": "https://github.com/aliatwood/Backend-laboration3-uppgift1#readme"
+  "homepage": "https://github.com/aliatwood/Backend-laboration3-uppgift1#readme",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "mongoose": "^9.6.0"
+  }
 }
