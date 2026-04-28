@@ -3,7 +3,7 @@ const cors = require("cors");
 require("dotenv").config();
 const mongoose = require("mongoose");
 
-const workExperienceRoutes = require("./workExperience");
+const workExperienceRoutes = require("./workexperience");
 
 const app = express();
 
