@@ -22,7 +22,7 @@ PORT=3000
 
 | Samling (Collection) | Fält |
 |---|---|
-| workexperiences | _id (ObjectId), companyName (String), jobTitle (String), location (String), startDate (Date), endDate (Date), description (String) |
+| WorkExperience | _id (ObjectId), companyName (String), jobTitle (String), location (String), startDate (Date), endDate (Date), description (String) |
 
 ## Användning
 
