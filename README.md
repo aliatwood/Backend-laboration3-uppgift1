@@ -6,7 +6,7 @@ jobbtitlar, platser och anställningsperioder.
 Grundläggande funktionalitet för CRUD (Create, Read, Update, Delete) är implementerad.
 
 ## Länk
-En liveversion av APIet finns tillgänglig på följande URL: (https://backend-laboration3-uppgift1-production.up.railway.app/)
+En liveversion av APIet finns tillgänglig på följande URL: https://backend-laboration3-uppgift1-production.up.railway.app/api/workexperience
 
 ## Installation och databas
 
