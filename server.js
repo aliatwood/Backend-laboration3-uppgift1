@@ -26,8 +26,8 @@ app.get("/", (req, res) => {
   res.send("API is running");
 });
 
-// Startar servern på porten från .env, annars 3000 som fallback
-const PORT = process.env.PORT || 3000;
+// Startar servern på porten från .env
+const PORT = process.env.PORT;
 app.listen(PORT, () => {
   console.log(`Servern körs på port ${PORT}`);
 });
