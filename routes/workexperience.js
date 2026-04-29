@@ -31,6 +31,7 @@ router.get("/:id", async (req, res) => {
 router.post("/", async (req, res) => {
   const { companyName, jobTitle, location, startDate, description } = req.body;
 
+  //Validering för de obligatoriska fälten
   if (!companyName || !jobTitle || !location || !startDate || !description) {
     return res.status(400).json({ error: "Alla obligatoriska fält måste fyllas i (companyName, jobTitle, location, startDate, description)" });
   }

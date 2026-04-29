@@ -34,8 +34,8 @@ app.get("/", (req, res) => {
 // Kopplar alla routes till /api/workexperience
 app.use("/api/workexperience", workExperienceRoutes);
 
-// Startar servern på porten från .env
-const PORT = process.env.PORT;
+// Startar servern på porten från .env och har port 3000 som fallback
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Servern körs på port ${PORT}`);
 });
