@@ -1,6 +1,8 @@
 const express = require("express");
 const router = express.Router();
-const WorkExperience = require("./models/WorkExperience");
+
+// Importerar mongoose för arbetserfarenheter
+const WorkExperience = require("../models/WorkExperience");
 
 // GET - Hämtar alla arbetserfarenheter
 router.get("/", async (req, res) => {
@@ -12,7 +14,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-// GET - Hämtar en specifik arbetserfarenhet via ID
+// GET - Hämtar en specifik arbetserfarenhet med id
 router.get("/:id", async (req, res) => {
   try {
     const item = await WorkExperience.findById(req.params.id);
@@ -45,6 +47,7 @@ router.post("/", async (req, res) => {
 router.put("/:id", async (req, res) => {
   const { companyName, jobTitle, location, startDate, description } = req.body;
 
+  //Validering för de obligatoriska fälten
   if (!companyName || !jobTitle || !location || !startDate || !description) {
     return res.status(400).json({ error: "Alla obligatoriska fält måste fyllas i (companyName, jobTitle, location, startDate, description)" });
   }
@@ -81,4 +84,5 @@ router.delete("/:id", async (req, res) => {
   }
 });
 
+// Exporterar routern så den kan användas i server.js
 module.exports = router;

@@ -1,17 +1,24 @@
+//Importerar express
 const express = require("express");
+
+//Importerar cors
 const cors = require("cors");
-require("dotenv").config(); // Laddar in miljövariabler från .env-filen
+
+// Laddar miljövariabler från .env-filen
+require("dotenv").config()
+
+//Importerar mongoose
 const mongoose = require("mongoose");
 
 // Importerar routes för arbetserfarenheter
-const workExperienceRoutes = require("./workexperience");
+const workExperienceRoutes = require("./routes/workexperience");
 
 const app = express();
 
-// Tillåter anrop från andra domäner (cross-origin requests)
+// Middleware som tillåter cross origin requests
 app.use(cors());
 
-// Gör så att Express kan läsa JSON i request body
+// Middleware som gör att servern kan läsa JSON i requests
 app.use(express.json());
 
 // Ansluter till MongoDB via connection string från .env
@@ -19,12 +26,13 @@ mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("Ansluten till MongoDB"))
   .catch(err => console.error("Kunde inte ansluta till MongoDB:", err));
 
-// Alla routes för arbetserfarenheter ligger under /api/workexperience
-app.use("/api/workexperience", workExperienceRoutes);
-
+// Root route för att kontrollera att servern funkar
 app.get("/", (req, res) => {
   res.send("API is running");
 });
+
+// Kopplar alla routes till /api/workexperience
+app.use("/api/workexperience", workExperienceRoutes);
 
 // Startar servern på porten från .env
 const PORT = process.env.PORT;
