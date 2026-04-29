@@ -22,6 +22,10 @@ mongoose.connect(process.env.MONGO_URI)
 // Alla routes för arbetserfarenheter ligger under /api/workexperience
 app.use("/api/workexperience", workExperienceRoutes);
 
+app.get("/", (req, res) => {
+  res.send("API is running");
+});
+
 // Startar servern på porten från .env, annars 3000 som fallback
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
